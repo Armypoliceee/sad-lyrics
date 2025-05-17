@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadow Echoes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cardo', serif;
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+      color: #e0dede;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      color: #ff6666;
+      text-shadow: 0 0 15px #660000;
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 15px #660000;
+      }
+      20%, 24%, 55% {
+        text-shadow: none;
+      }
+    }
+
+    p.subtitle {
+      font-style: italic;
+      color: #999;
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: 1px solid #555;
+      color: #fff;
+      padding: 12px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #330000;
+    }
+
+    #sadLineOutput {
+      margin-top: 25px;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #ffcccc;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #sadLineOutput.show {
+      opacity: 1;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #e8e8e8;
+      border-bottom: 1px solid #444;
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    .lyric-block {
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .lyric-block h3 {
+      color: #ff6666;
+      margin: 0 0 5px;
+    }
+
+    .lyric-block p {
+      font-style: italic;
+      color: #ccc;
+    }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #444;
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-10vh); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Shadow Echoes</h1>
+      <p class="subtitle">Where lyrics bleed and hearts break silently...</p>
+    </header>
+
+    <button class="btn" onclick="generateSadLine()">Get a Sad Line</button>
+    <p id="sadLineOutput"></p>
+
+    <h2>Lyrics Library</h2>
+
+      <div class="lyric-block">
+    <h3>"Empty Rooms"</h3>
+    <p>"There’s no echo in this silence anymore…"</p>
+    <p>"The bed feels bigger without your breathing beside me."</p>
+    <p>"Even the walls miss your shadow."</p>
+    <p>"The windows are closed, but the cold still gets in."</p>
+    <p>"Empty chairs remind me where you used to sit."</p>
+    <p>"The light fades faster when you’re not around."</p>
+    <p>"Dust settles on memories we left behind."</p>
+    <p>"My footsteps sound louder in this hollow house."</p>
+    <p>"Whispers fill the rooms where laughter used to live."</p>
+    <p>"I talk to the walls but they never answer."</p>
+    <p>"Shadows stretch longer in your absence."</p>
+    <p>"The air tastes bitter without you here."</p>
+    <p>"I’m surrounded by silence that screams your name."</p>
+    <p>"Every corner holds a ghost of our past."</p>
+    <p>"The floorboards creak with lonely songs."</p>
+    <p>"I trace your shape in empty doorways."</p>
+    <p>"The clock ticks louder in the quiet of night."</p>
+    <p>"Rooms remember the touch of your hands."</p>
+    <p>"I search for you in the empty spaces."</p>
+    <p>"My heart echoes through these vacant halls."</p>
+    <p>"The silence grows heavier every day."</p>
+    <p>"Walls bleed memories I can't erase."</p>
+    <p>"I feel lost in the space between us."</p>
+    <p>"The night is colder in this empty room."</p>
+    <p>"I’m trapped inside a house that knows no peace."</p>
+    <p>"Your absence is a shadow on every wall."</p>
+    <p>"The windows weep when I look outside."</p>
+    <p>"This house is a cage of forgotten dreams."</p>
+    <p>"I hold onto silence like it’s the only friend left."</p>
+    <p>"Empty rooms are full of things unsaid."</p>
+  </div>
+
+  <div class="lyric-block">
+    <h3>"Fading Memory"</h3>
+    <p>"I forgot what your voice sounds like, but the ache remains."</p>
+    <p>"Your name still sounds like a wound."</p>
+    <p>"The photo frame cracked — just like us."</p>
+    <p>"I stopped checking my phone… but I still hope."</p>
+    <p>"Memories fade but the pain stays sharp."</p>
+    <p>"I reach for the past but it slips through my fingers."</p>
+    <p>"Your shadow lingers in every fading light."</p>
+    <p>"The echo of your laughter haunts my days."</p>
+    <p>"I’m chasing memories I can never hold."</p>
+    <p>"Time steals moments but not the hurt."</p>
+    <p>"I keep your ghost locked inside my mind."</p>
+    <p>"The past is a prison without bars."</p>
+    <p>"Regret whispers softly in the dark."</p>
+    <p>"I hold your silence louder than your words."</p>
+    <p>"Your touch is a memory I can’t forget."</p>
+    <p>"I’m haunted by all we never said."</p>
+    <p>"The pain of missing you never leaves."</p>
+    <p>"I’m lost in the fog of what used to be."</p>
+    <p>"The photo is cracked, but my heart is shattered."</p>
+    <p>"I’m walking through ruins of yesterday’s love."</p>
+    <p>"Your memory is a ghost that won’t rest."</p>
+    <p>"I carry your absence like a heavy stone."</p>
+    <p>"The past bleeds through my present."</p>
+    <p>"I’m stuck in yesterday, unable to move on."</p>
+    <p>"Your goodbye is the silence I can’t break."</p>
+    <p>"I’m drowning in memories without you."</p>
+    <p>"The ache of loss is a constant companion."</p>
+    <p>"I’m searching for you in the shadows of time."</p>
+    <p>"My heart is a graveyard of faded dreams."</p>
+    <p>"The wounds of yesterday still bleed today."</p>
+  </div>
+
+  <div class="lyric-block">
+    <h3>"Rain Inside"</h3>
+    <p>"The storm outside feels quieter than the one within."</p>
+    <p>"Raindrops fall, but they sound like you crying."</p>
+    <p>"It rains, and I pretend it’s just the sky grieving."</p>
+    <p>"Umbrellas don’t help when the rain comes from the heart."</p>
+    <p>"Tears mix with rain, blurring the line between inside and out."</p>
+    <p>"The thunder matches the beat of my broken heart."</p>
+    <p>"Every drop reminds me of what I lost."</p>
+    <p>"Rain hides the tears I’m too proud to shed."</p>
+    <p>"Storm clouds gather where your warmth once was."</p>
+    <p>"The wind whispers your name through the pouring rain."</p>
+    <p>"Lightning strikes, mirroring the pain inside me."</p>
+    <p>"The rain erases footprints, just like time erases us."</p>
+    <p>"I stand soaked, but the cold is in my soul."</p>
+    <p>"Rain falls like a lullaby for broken dreams."</p>
+    <p>"The flood inside me has no end."</p>
+    <p>"Each drop is a memory washing away hope."</p>
+    <p>"Storms rage, but none as fierce as this heartbreak."</p>
+    <p>"I watch the rain, hoping it will wash away the past."</p>
+    <p>"The clouds cry with me in this endless sorrow."</p>
+    <p>"The rain is a mirror reflecting my loneliness."</p>
+    <p>"My heart is drowning in this endless downpour."</p>
+    <p>"The storm inside me is silent but deadly."</p>
+    <p>"Rain beats against the window, matching my restless mind."</p>
+    <p>"Every raindrop is a tear I didn’t let fall."</p>
+    <p>"The sky’s tears are heavier than mine."</p>
+    <p>"The rain is the only witness to my pain."</p>
+    <p>"I walk through storms, searching for your light."</p>
+    <p>"The weather outside matches the storm in my chest."</p>
+    <p>"Rainfall drowns out the silence you left behind."</p>
+    <p>"I’m soaked with memories I can’t escape."</p>
+  </div>
+    <!-- Add more lyric blocks if you'd like -->
+
+    <!-- Floating particles -->
+    <script>
+      for (let i = 0; i < 50; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('particle');
+        dot.style.left = Math.random() * 100 + 'vw';
+        dot.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(dot);
+      }
+    </script>
+
+    <!-- Sad line generator -->
+    <script>
+      const sadLines = [
+        "The moon saw me cry, but it never said a word.",
+        "I exist, but I don’t feel real anymore.",
+        "Even my shadow left when the light died.",
+        "My heartbeat feels like a countdown.",
+        "You disappeared like you were never here.",
+        "There’s comfort in numbness I wish I never knew.",
+        "Hope is a cruel ghost that haunts my chest.",
+        "I scream inside where no one hears.",
+        "I wear my sadness like it’s stitched into my skin.",
+        "I’m alive, but only technically.",
+        "The silence is louder than your goodbye.",
+        "Tears dry, but the ache remains eternal.",
+        "I broke in places no one can see.",
+        "Even in a crowd, I feel like a ghost.",
+        "I miss the version of me that didn’t know you.",
+        "My memories bleed when I try to smile.",
+        "I keep waiting for someone who’s not coming back.",
+        "Grief is the only thing that stays.",
+        "I am the aftertaste of sorrow.",
+        "Every 'I'm fine' tastes like a lie.",
+        "My soul sleeps even when I don’t.",
+        "Pain doesn’t leave—it just gets quiet.",
+        "There are nights I don’t feel real at all.",
+        "Your absence is the loudest thing in my life.",
+        "I’m not healing, I’m hiding it better.",
+        "I gave you everything and kept nothing for myself.",
+        "Some goodbyes echo for a lifetime.",
+        "I speak to the stars because you stopped listening.",
+        "I buried my heart where no one can find it.",
+        "Even the mirror avoids eye contact now."
+      ];
+
+      function generateSadLine() {
+        const line = sadLines[Math.floor(Math.random() * sadLines.length)];
+        const output = document.getElementById("sadLineOutput");
+        output.innerText = `"${line}"`;
+        output.classList.remove("show");
+        void output.offsetWidth; // trigger reflow
+        output.classList.add("show");
+      }
+    </script>
+
+  </div>
+</body>
+</html>
